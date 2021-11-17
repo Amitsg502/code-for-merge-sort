@@ -1,0 +1,42 @@
+def merge_sort(list1, first, last):  
+    if first >= last:  
+        return  
+  
+    middle = (first + last)//2  
+    merge_sort(list1, first, middle)  
+    merge_sort(list1, middle + 1, last)  
+    merge(list1, first, last, middle)  
+    
+def merge(list1, left_index, right_index, middle):  
+  
+    left_sublist = list1[left_index:middle + 1]  
+    right_sublist = list1[middle+1:right_index+1]  
+  
+    left_sublist_index = 0  
+    right_sublist_index = 0  
+    sorted_index = left_index  
+   
+    while a < len(L1) and b < len(L2):   
+    
+        if L1[a] <= L2[b]:  
+            list1[x] = L1[a]  
+            a = left_sublist_index + 1  
+        else:  
+            list1[x] = L2[b]  
+            b = b + 1  
+    
+        x = x + 1  
+  
+    while a < len(L1):  
+        list1[x] = L1[a]  
+        a = a + 1  
+        x = x + 1  
+  
+    while b < len(L2):  
+        list1[x] = L2[b]  
+        b = b + 1  
+        x = x + 1  
+  
+list1 = [44, 65, 2, 3, 58, 14, 57, 23, 10, 1, 7, 74, 48]  
+merge_sort(list1, 0, len(list1) -1)  
+print(list1)  
